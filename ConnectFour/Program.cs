@@ -92,7 +92,7 @@ namespace ConnectFour
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate + 1].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate + 2].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate + 3].PieceType)
-                {
+                  {
                     return piecePlaced.PieceType;
                 }
             }
@@ -105,7 +105,7 @@ namespace ConnectFour
                     return piecePlaced.PieceType;
                 }
             }
-            if (piecePlaced.YCoordinate <= 6 && piecePlaced.YCoordinate >= 3)
+            if (piecePlaced.YCoordinate <= 6 && piecePlaced.YCoordinate >= 2)
             {
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate - 2].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate - 1].PieceType &&
@@ -114,11 +114,83 @@ namespace ConnectFour
                     return piecePlaced.PieceType;
                 }
             }
-            if (piecePlaced.YCoordinate <= 7)
+            if (piecePlaced.YCoordinate >= 3)
             {
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate - 3].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate - 2].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate - 1].PieceType)
+                {
+                    return piecePlaced.PieceType;
+                }
+            }
+            if (piecePlaced.XCoordinate <= 3 && piecePlaced.YCoordinate <= 4)
+            {
+                if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 1, piecePlaced.YCoordinate + 1].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 2, piecePlaced.YCoordinate + 2].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 3, piecePlaced.YCoordinate + 3].PieceType)
+                {
+                    return piecePlaced.PieceType;
+                }
+            }
+            if (piecePlaced.XCoordinate <= 4 && piecePlaced.XCoordinate >= 1 && piecePlaced.YCoordinate <= 5 && piecePlaced.YCoordinate >= 1)
+            {
+                if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 1, piecePlaced.YCoordinate - 1].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 1, piecePlaced.YCoordinate + 1].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 2, piecePlaced.YCoordinate + 2].PieceType)
+                {
+                    return piecePlaced.PieceType;
+                }
+            }
+            if (piecePlaced.XCoordinate <= 5 && piecePlaced.XCoordinate >= 2 && piecePlaced.YCoordinate <= 6 && piecePlaced.YCoordinate >= 2)
+            {
+                if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 1, piecePlaced.YCoordinate - 1].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 2, piecePlaced.YCoordinate - 2].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 1, piecePlaced.YCoordinate + 1].PieceType)
+                {
+                    return piecePlaced.PieceType;
+                }
+            }
+            if (piecePlaced.XCoordinate >= 3 && piecePlaced.YCoordinate >= 3)
+            {
+                if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 1, piecePlaced.YCoordinate - 1].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 2, piecePlaced.YCoordinate - 2].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 3, piecePlaced.YCoordinate - 3].PieceType)
+                {
+                    return piecePlaced.PieceType;
+                }
+            }
+            if (piecePlaced.XCoordinate >= 3 && piecePlaced.YCoordinate <= 4)
+            {
+                if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 1, piecePlaced.YCoordinate + 1].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 2, piecePlaced.YCoordinate + 2].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 3, piecePlaced.YCoordinate + 3].PieceType)
+                {
+                    return piecePlaced.PieceType;
+                }
+            }
+            if (piecePlaced.XCoordinate <= 5 && piecePlaced.XCoordinate >= 2 && piecePlaced.YCoordinate <= 5 && piecePlaced.YCoordinate >= 1)
+            {
+                if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 1, piecePlaced.YCoordinate - 1].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 1, piecePlaced.YCoordinate + 1].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 2, piecePlaced.YCoordinate + 2].PieceType)
+                {
+                    return piecePlaced.PieceType;
+                }
+            }
+            if (piecePlaced.XCoordinate <= 4 && piecePlaced.XCoordinate >= 1 && piecePlaced.YCoordinate <= 6 && piecePlaced.YCoordinate >= 2)
+            {
+                if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 2, piecePlaced.YCoordinate - 2].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 1, piecePlaced.YCoordinate - 1].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 1, piecePlaced.YCoordinate + 1].PieceType)
+                {
+                    return piecePlaced.PieceType;
+                }
+            }
+            if (piecePlaced.XCoordinate <= 3 && piecePlaced.YCoordinate >= 3)
+            {
+                if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 3, piecePlaced.YCoordinate - 3].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 2, piecePlaced.YCoordinate - 2].PieceType &&
+                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 1, piecePlaced.YCoordinate - 1].PieceType)
                 {
                     return piecePlaced.PieceType;
                 }
