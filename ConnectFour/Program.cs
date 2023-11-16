@@ -60,6 +60,7 @@ namespace ConnectFour
                 {
                     Console.WriteLine("The column number entered is too big or too small, try again.");
                 }
+
             }
             if (winner == "R")
                 Console.WriteLine("Red has won!");
@@ -79,15 +80,16 @@ namespace ConnectFour
         }
         static String FindWinner(ConnectFourPiece[,] gameBoard, ConnectFourPiece piecePlaced)
         {
-            Console.WriteLine($"{piecePlaced.PieceType} {piecePlaced.XCoordinate} {piecePlaced.YCoordinate}");
-            if (piecePlaced.XCoordinate <= 3 &&
-                piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 1, piecePlaced.YCoordinate].PieceType &&
+            if (piecePlaced.XCoordinate <= 2)
+            {
+                if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 1, piecePlaced.YCoordinate].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 2, piecePlaced.YCoordinate].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 3, piecePlaced.YCoordinate].PieceType)
-            {
-                return piecePlaced.PieceType;
+                {
+                    return piecePlaced.PieceType;
+                }
             }
-            if (piecePlaced.YCoordinate <= 4)
+            if (piecePlaced.YCoordinate <= 3)
             {
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate + 1].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate + 2].PieceType &&
@@ -96,7 +98,7 @@ namespace ConnectFour
                     return piecePlaced.PieceType;
                 }
             }
-            if (piecePlaced.YCoordinate <= 5 && piecePlaced.YCoordinate >= 1)
+            if (piecePlaced.YCoordinate <= 4 && piecePlaced.YCoordinate >= 1)
             {
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate - 1].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate + 1].PieceType &&
@@ -105,7 +107,7 @@ namespace ConnectFour
                     return piecePlaced.PieceType;
                 }
             }
-            if (piecePlaced.YCoordinate <= 6 && piecePlaced.YCoordinate >= 2)
+            if (piecePlaced.YCoordinate <= 5 && piecePlaced.YCoordinate >= 2)
             {
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate - 2].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate, piecePlaced.YCoordinate - 1].PieceType &&
@@ -123,7 +125,7 @@ namespace ConnectFour
                     return piecePlaced.PieceType;
                 }
             }
-            if (piecePlaced.XCoordinate <= 3 && piecePlaced.YCoordinate <= 4)
+            if (piecePlaced.XCoordinate <= 2 && piecePlaced.YCoordinate <= 3)
             {
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 1, piecePlaced.YCoordinate + 1].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 2, piecePlaced.YCoordinate + 2].PieceType &&
@@ -132,7 +134,7 @@ namespace ConnectFour
                     return piecePlaced.PieceType;
                 }
             }
-            if (piecePlaced.XCoordinate <= 4 && piecePlaced.XCoordinate >= 1 && piecePlaced.YCoordinate <= 5 && piecePlaced.YCoordinate >= 1)
+            if (piecePlaced.XCoordinate <= 3 && piecePlaced.XCoordinate >= 1 && piecePlaced.YCoordinate <= 4 && piecePlaced.YCoordinate >= 1)
             {
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 1, piecePlaced.YCoordinate - 1].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 1, piecePlaced.YCoordinate + 1].PieceType &&
@@ -141,7 +143,7 @@ namespace ConnectFour
                     return piecePlaced.PieceType;
                 }
             }
-            if (piecePlaced.XCoordinate <= 5 && piecePlaced.XCoordinate >= 2 && piecePlaced.YCoordinate <= 6 && piecePlaced.YCoordinate >= 2)
+            if (piecePlaced.XCoordinate <= 4 && piecePlaced.XCoordinate >= 2 && piecePlaced.YCoordinate <= 5 && piecePlaced.YCoordinate >= 2)
             {
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 1, piecePlaced.YCoordinate - 1].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 2, piecePlaced.YCoordinate - 2].PieceType &&
@@ -159,7 +161,7 @@ namespace ConnectFour
                     return piecePlaced.PieceType;
                 }
             }
-            if (piecePlaced.XCoordinate >= 3 && piecePlaced.YCoordinate <= 4)
+            if (piecePlaced.XCoordinate >= 3 && piecePlaced.YCoordinate <= 3)
             {
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 1, piecePlaced.YCoordinate + 1].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 2, piecePlaced.YCoordinate + 2].PieceType &&
@@ -168,7 +170,7 @@ namespace ConnectFour
                     return piecePlaced.PieceType;
                 }
             }
-            if (piecePlaced.XCoordinate <= 5 && piecePlaced.XCoordinate >= 2 && piecePlaced.YCoordinate <= 5 && piecePlaced.YCoordinate >= 1)
+            if (piecePlaced.XCoordinate <= 4 && piecePlaced.XCoordinate >= 2 && piecePlaced.YCoordinate <= 4 && piecePlaced.YCoordinate >= 1)
             {
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 1, piecePlaced.YCoordinate - 1].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate - 1, piecePlaced.YCoordinate + 1].PieceType &&
@@ -177,7 +179,7 @@ namespace ConnectFour
                     return piecePlaced.PieceType;
                 }
             }
-            if (piecePlaced.XCoordinate <= 4 && piecePlaced.XCoordinate >= 1 && piecePlaced.YCoordinate <= 6 && piecePlaced.YCoordinate >= 2)
+            if (piecePlaced.XCoordinate <= 3 && piecePlaced.XCoordinate >= 1 && piecePlaced.YCoordinate <= 5 && piecePlaced.YCoordinate >= 2)
             {
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 2, piecePlaced.YCoordinate - 2].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 1, piecePlaced.YCoordinate - 1].PieceType &&
@@ -186,7 +188,7 @@ namespace ConnectFour
                     return piecePlaced.PieceType;
                 }
             }
-            if (piecePlaced.XCoordinate <= 3 && piecePlaced.YCoordinate >= 3)
+            if (piecePlaced.XCoordinate <= 2 && piecePlaced.YCoordinate >= 3)
             {
                 if (piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 3, piecePlaced.YCoordinate - 3].PieceType &&
                 piecePlaced.PieceType == gameBoard[piecePlaced.XCoordinate + 2, piecePlaced.YCoordinate - 2].PieceType &&
