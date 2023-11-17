@@ -12,10 +12,7 @@ namespace ConnectFour
 
         public static void WriteToFile(String name)
         {
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(rootPath, fileName)))
-            {
-                outputFile.WriteLine(name);
-            }
+            File.AppendAllText(fileName, name+"\n");
         }
 
         public static List<String> ReadFromFile()

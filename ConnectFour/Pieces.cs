@@ -20,19 +20,10 @@ namespace ConnectFour
             this.YCoordinate = yCoordinate;
         }
 
-        public String PieceType
-        {
-            get; set;
-        }
+        public String PieceType {get; set;}
 
-        public int XCoordinate
-        {
-            get; set;
-        }
+        public int XCoordinate {get; set;}
 
-        public int YCoordinate
-        {
-            get; set;
-        }
+        public int YCoordinate { get; set;}
     }
 }
